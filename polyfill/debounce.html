@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" name="input">
+<script type="text/javascript">
+let change = debounce(function(e) {
+	console.log(this);
+	console.log(e);
+}, 300, true);
+
+document.getElementsByTagName('input')[0].addEventListener('input', change);
+
+function debounce(func, wait, immediate) {
+
+    var timeout, result;
+
+    return function () {
+        var context = this;
+        var args = arguments;
+
+        if (timeout) clearTimeout(timeout);
+        if (immediate) {
+        	if (!timeout) func.apply(context, args)
+            timeout = setTimeout(function(){
+                timeout = null;
+            }, wait)
+        }
+        else {
+            timeout = setTimeout(function(){
+                func.apply(context, args)
+            }, wait);
+        }
+    }
+}
+</script>
+</body>
+</html>
