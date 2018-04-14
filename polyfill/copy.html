@@ -9,6 +9,7 @@
 	    if (typeof obj !== 'object') return obj;
 	    var newObj = obj instanceof Array ? [] : {};
 	    for (var key in obj) {
+	    	console.log(key);
 	        if (obj.hasOwnProperty(key)) {
 	            newObj[key] = typeof obj[key] === 'object' ? deepCopy(obj[key]) : obj[key];
 	        }
@@ -16,13 +17,14 @@
 	    return newObj;
 	}
 
-	var m = {a: {b:12}, c:23};
-	var q = '3';
-	var c = deepCopy(m);
+	// var m = {a: {b:12}, c:23};
+	var q = new Number(3);
+	// var c = deepCopy(m);
 	var z = deepCopy(q);
-	c.a.b = 5;
-	console.log(m);
-	console.log(c);
+	// c.a.b = 5;
+	// console.log(m);
+	// console.log(c);
+	console.log(q);
 	console.log(z);
 </script>
 </body>

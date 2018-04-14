@@ -13,6 +13,7 @@ let change = debounce(function(e) {
 
 document.getElementsByTagName('input')[0].addEventListener('input', change);
 
+// 虽然事件持续触发，但只有等事件停止触发后 n 秒才执行函数
 function debounce(func, wait, immediate) {
 
     var timeout, result;
@@ -27,8 +28,7 @@ function debounce(func, wait, immediate) {
             timeout = setTimeout(function(){
                 timeout = null;
             }, wait)
-        }
-        else {
+        } else {
             timeout = setTimeout(function(){
                 func.apply(context, args)
             }, wait);
