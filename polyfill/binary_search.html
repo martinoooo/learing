@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+Array.prototype.binary_search = function (low, high, key) {
+	if (low > high) {
+		return -1;
+	}
+	var mid = Math.floor((low + high) / 2);
+	if (this[mid] > key) {
+		return this.binary_search(low, mid -1 , key);
+	}
+	if (this[mid] < key) {
+		return this.binary_search(mid + 1, high, key);
+	}
+	return mid;
+}
+
+var array = [1,2,3,4,5];
+
+console.log(array.binary_search(0, 4, 2));
+</script>
+</body>
+</html>
