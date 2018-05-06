@@ -48,3 +48,4 @@ Temporary Items
 webpack/node_modules/
 webpack/dist/*.js
 webpack/dist/*.png
+webpack/dist/*.map
