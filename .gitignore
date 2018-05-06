@@ -47,3 +47,4 @@ Temporary Items
 .apdisk
 webpack/node_modules/
 webpack/dist/*.js
+webpack/dist/*.png
